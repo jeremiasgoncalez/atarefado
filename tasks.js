@@ -119,18 +119,7 @@ function editTask(event) {
     return;
   }
   
-  //Verificacao simples para previnir tarefas duplicadas
-  if (document.querySelector(`input[value="${task.value}"]`)) {
-    Swal.fire({
-      title: "<i>Uhmm... </i>&#129320;", 
-      html: "Erro ao editar tarefa: <b>Parece que essa tarefa já existe!</b>",  
-      confirmButtonText: "Ok", 
-    });
-    event.value = currentTask;
-      return;
-  }
-  
-  //Retorno ao editar a tarefa mantendo o mesmo rótulo...
+  //Retorno ao editar a tarefa mantendo o mesmo rótulo ou na tentativa de duplicar tarefas
   tasks.forEach(task => {
     if (task.task === event.value) {
       Swal.fire({
