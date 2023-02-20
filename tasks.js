@@ -126,8 +126,8 @@ function editTask(event) {
       html: "Erro ao editar tarefa: <b>Parece que essa tarefa já existe!</b>",  
       confirmButtonText: "Ok", 
     });
-    task.value = "";
-    return false;
+    event.value = currentTask;
+      return;
   }
   
   //Retorno ao editar a tarefa mantendo o mesmo rótulo...
